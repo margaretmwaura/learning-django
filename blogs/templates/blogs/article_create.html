@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}   
+<form method='POST' action='.'>
+{% csrf_token %}
+<!-- The as_p function takes the form that has been passed down as context and converts it to html form renderd with p tags -->
+{{ form.as_p }}
+<!-- <input type='text' name='title' placeholder='your title' /> -->
+<input type='submit' value='Save'/>
+</form>
+
+{% endblock %}

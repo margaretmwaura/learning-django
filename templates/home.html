@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}   
+<p>Hello World </p>
+{{ request.user}}
+<h1>{{ my_text|capfirst }}</h1>
+<h3>{{ my_number }}</h3>
+<h2>{{ my_list}} </h2>
+<p>{{ appreciation|slugify}}</p>
+<p>Ma bitches we gonna be using a for-loop </p>
+
+
+<ul>
+{% for my_sub_item in my_list %}
+    {% if my_sub_item == 312 %}
+    <li>{{ forloop.counter}} - {{ my_sub_item|add:22 }}</li>
+    {% elif my_sub_item == 'abc' %}
+    <li>We killing it in here </li>
+    {% else %}
+    <li>{{ forloop.counter}} - {{ my_sub_item }}</li> 
+    {% endif %}  
+{% endfor %}
+</ul>
+
+
+<p>This is a damn gooooood template </p>
+{% endblock %}
